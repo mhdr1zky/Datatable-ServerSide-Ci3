@@ -1,0 +1,33 @@
+#Hapus index.php
+RewriteEngine On
+RewriteCond %{REQUEST_URI} ^/system.*
+RewriteRule ^(.*)$ index.php?/$1 [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ index.php?/$1 [L]
+
+
+# RewriteCond $1 !^(index\.php|robots\.txt)
+# RewriteCond %{REQUEST_FILENAME} !-f 
+# RewriteCond %{REQUEST_FILENAME} !-d 
+# RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+
+# RewriteEngine on
+# RewriteCond %{HTTP_REFERER} !^$
+# RewriteCond %{HTTP_REFERER} !^https://(www\.)sharecode.id/.*$ [NC]
+# RewriteRule \.(gif|jpg|jpeg|mp3|png|pdf|zip|css|js)$ – [F]
+
+# <Files .htaccess>
+# 	order allow,deny
+# 	deny from all
+# </Files>
+
+#Mematikan directory indexing
+# Options –Indexes
+
+
+php_value post_max_size 8000M 
+php_value upload_max_filesize 8000M 
+php_value max_execution_time 0 
+php_value max_input_time 50000 
+php_value memory_limit 10000M
